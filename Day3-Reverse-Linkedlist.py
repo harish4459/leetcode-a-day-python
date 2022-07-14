@@ -28,9 +28,18 @@ Follow up: A linked list can be reversed either iteratively or recursively. Coul
 Solution -
 
 Recursive-
-
-
-
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+        if not head:
+          return None
+        newHead = head
+        if head.next:
+          newHead = self.reverselist(head.next)
+          head.next.next = head
+        head.next = None  
+        return newHead
+       
 Iteraive-
 
 class Solution:
